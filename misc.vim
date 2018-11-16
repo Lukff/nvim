@@ -1,6 +1,7 @@
 set number
 set colorcolumn=80 textwidth=80 "80 characters line
 set cursorline "highlight cursor line
+set lazyredraw
 set hidden "buffers
 
 "Default indentation
