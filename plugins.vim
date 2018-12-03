@@ -32,6 +32,9 @@ Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 let g:pandoc#modules#disabled = ["folding"]
 let g:pandoc#spell#enabled = 0
+"augroup pandoc_syntax
+"    au! BufNewFile,BufFilePre,BufRead *.md set filetype=markdown.pandoc
+"augroup END
 
 " Color preview
 Plug 'ap/vim-css-color'
@@ -41,17 +44,17 @@ Plug 'ap/vim-css-color'
 "autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 
 " HTML
-Plug 'alvan/vim-closetag', { 'for': ['html', 'xml', 'vue']}
-Plug 'mattn/emmet-vim', { 'for': ['html', 'xml', 'vue']}
+Plug 'alvan/vim-closetag', { 'for': ['html', 'xml', 'vue', 'nunjucks']}
+Plug 'mattn/emmet-vim', { 'for': ['html', 'xml', 'vue', 'nunjucks']}
 
 " Lisp
-"Plug 'l04m33/vlime', {'rtp': 'vim/'}
-"Plug 'kovisoft/paredit', { 'for': ['lisp', 'scheme', 'clojure', 'racket']}
-"Plug 'junegunn/rainbow_parentheses.vim',{'on': 'RainbowParentheses'}
-"augroup rainbow_lisp
-"  autocmd!
-"  autocmd FileType lisp,clojure,scheme,racket RainbowParentheses
-"augroup END
+Plug 'l04m33/vlime', {'rtp': 'vim/'}
+Plug 'kovisoft/paredit', { 'for': ['lisp', 'scheme', 'clojure', 'racket']}
+Plug 'junegunn/rainbow_parentheses.vim',{'on': 'RainbowParentheses'}
+augroup rainbow_lisp
+  autocmd!
+  autocmd FileType lisp,clojure,scheme,racket RainbowParentheses
+augroup END
 
 " Colorscheme
 Plug 'romainl/Apprentice'
