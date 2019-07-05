@@ -13,42 +13,32 @@ Plug 'junegunn/vim-plug'
 
 " File manager
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
 
 " Linting
 Plug 'w0rp/ale'
-let g:ale_lint_on_text_changed = 0
+let g:ale_lint_on_text_changed = 1
 let g:ale_lint_on_enter = 0
-let g:ale_lint_on_save = 1
+let g:ale_lint_on_save = 0
 
-" Tags navigator
-Plug 'majutsushi/tagbar'
+" Smart comments
+Plug 'tomtom/tcomment_vim'
 
-" Syntax highlight
+"" Syntax highlight
 Plug 'sheerun/vim-polyglot'
-Plug 'JulesWang/css.vim'
-"set iskeyword+=-
-Plug 'vim-pandoc/vim-pandoc'
-Plug 'vim-pandoc/vim-pandoc-syntax'
-let g:pandoc#modules#disabled = ["folding"]
-let g:pandoc#spell#enabled = 0
-"augroup pandoc_syntax
-"    au! BufNewFile,BufFilePre,BufRead *.md set filetype=markdown.pandoc
-"augroup END
-
-" Color preview
-Plug 'ap/vim-css-color'
-
-" Completion
-"Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
-"autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 
 " HTML
-Plug 'alvan/vim-closetag', { 'for': ['html', 'xml', 'vue', 'nunjucks']}
-Plug 'mattn/emmet-vim', { 'for': ['html', 'xml', 'vue', 'nunjucks']}
-
+Plug 'alvan/vim-closetag', { 'for': ['html', 'xml', 'vue', 'jinja']}
+Plug 'mattn/emmet-vim', { 'for': ['html', 'xml', 'vue', 'jinja']}
+" CSS
+Plug 'JulesWang/css.vim'
+" Color preview
+Plug 'ap/vim-css-color'
+"Vue
+Plug 'posva/vim-vue'
+autocmd FileType vue syntax sync fromstart
+let g:vue_disable_pre_processors=1
 " Lisp
-Plug 'l04m33/vlime', {'rtp': 'vim/'}
+"Plug 'l04m33/vlime', {'rtp': 'vim/'}
 Plug 'kovisoft/paredit', { 'for': ['lisp', 'scheme', 'clojure', 'racket']}
 Plug 'junegunn/rainbow_parentheses.vim',{'on': 'RainbowParentheses'}
 augroup rainbow_lisp
@@ -59,4 +49,5 @@ augroup END
 " Colorscheme
 Plug 'romainl/Apprentice'
 
+" Plugins end
 call plug#end()

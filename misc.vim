@@ -3,6 +3,7 @@ set colorcolumn=80 textwidth=80 "80 characters line
 set cursorline "highlight cursor line
 set lazyredraw
 set hidden "buffers
+set wildmenu
 
 "Default indentation
 set tabstop=2
