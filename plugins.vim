@@ -7,45 +7,46 @@ endif
 
 " Plugins
 call plug#begin('~/.local/share/nvim/plugged')
-
-" Vim Plug Help
-Plug 'junegunn/vim-plug'
-
 " File manager
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 
-" Linting
-Plug 'w0rp/ale'
-let g:ale_lint_on_text_changed = 1
-let g:ale_lint_on_enter = 0
-let g:ale_lint_on_save = 0
+" Language Servers and autocomplete
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+let g:coc_global_extensions = [ 'coc-vetur',
+      \                         'coc-tsserver',
+      \                         'coc-phpls'
+      \                       ]
+
+set cmdheight=2
+set updatetime=300
+set shortmess+=c
+set signcolumn=yes
 
 " Smart comments
-Plug 'tomtom/tcomment_vim'
+"Plug 'tomtom/tcomment_vim'
+
+"set statusline+=%{FugitiveStatusline()}
 
 "" Syntax highlight
-Plug 'sheerun/vim-polyglot'
+"Plug 'sheerun/vim-polyglot'
 
 " HTML
-Plug 'alvan/vim-closetag', { 'for': ['html', 'xml', 'vue', 'jinja']}
-Plug 'mattn/emmet-vim', { 'for': ['html', 'xml', 'vue', 'jinja']}
+"Plug 'alvan/vim-closetag', { 'for': ['html', 'xml', 'vue', 'jinja']}
+"Plug 'mattn/emmet-vim', { 'for': ['html', 'xml', 'vue', 'jinja']}
 " CSS
-Plug 'JulesWang/css.vim'
+" Plug 'JulesWang/css.vim'
 " Color preview
-Plug 'ap/vim-css-color'
+" Plug 'ap/vim-css-color'
 "Vue
-Plug 'posva/vim-vue'
-autocmd FileType vue syntax sync fromstart
-let g:vue_disable_pre_processors=1
-" Lisp
-"Plug 'l04m33/vlime', {'rtp': 'vim/'}
-Plug 'kovisoft/paredit', { 'for': ['lisp', 'scheme', 'clojure', 'racket']}
-Plug 'junegunn/rainbow_parentheses.vim',{'on': 'RainbowParentheses'}
-augroup rainbow_lisp
-  autocmd!
-  autocmd FileType lisp,clojure,scheme,racket RainbowParentheses
-augroup END
+" Plug 'posva/vim-vue'
+" autocmd FileType vue syntax sync fromstart
+" let g:vue_disable_pre_processors=1
 
+" Git
+Plug 'tpope/vim-fugitive'
+" Statusline
+Plug 'vim-airline/vim-airline'
 " Colorscheme
 Plug 'romainl/Apprentice'
 
